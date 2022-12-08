@@ -42,3 +42,5 @@ public class PostMethodQuiz10 extends HttpServlet{
 		out.print("</body></html>");
 	}
 }
+
+// 변경 확인용 주석
