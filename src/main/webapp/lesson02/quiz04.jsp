@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>quiz03_1</title>
+	<title>계산기</title>
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -13,30 +13,21 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
-<%
-	int height = Integer.parseInt(request.getParameter("height"));
-	int weight = Integer.parseInt(request.getParameter("weight"));
-	
-	double BMI = weight / ((height / 100.0) * (height / 100.0));
-	
-	String result = null;
-	
-	if(BMI <= 20){
-		result = "저체중";
-	} else if(BMI >= 21 && BMI <= 25){
-		result = "정상";
-	} else if(BMI >= 26 && BMI <= 30){
-		result = "과체중";
-	} else {
-		result = "비만";
-	}
-
-%>
-
-<div class="container">
-	<h1><b>BMI</b> 측정 결과</h1>
-	<span class="display-3">당신은 <span class="text-info"><%= result %></span> 입니다.</span><br>
-	<span>BMI 수치 : <%= BMI %></span>
-</div>
+	<div class=container>
+	<h1>사칙 연산 계산기</h1>
+	<form method="post" action="/lesson02/quiz04_1.jsp">
+		<div class="form-group d-flex">
+			<input type="text" class="form-control col-2 mr-2" name=firstNumber>
+			<select name="operator" class="form-control col-1 mr-2">
+				<option>+</option>
+				<option>-</option>
+				<option>*</option>
+				<option>/</option>
+			</select>
+			<input type="text" class="form-control col-2 mr-2" name=secondNumber>
+			<button type="submit" class="btn btn-success">계산하기</button>
+		</div>
+	</form>
+	</div>
 </body>
 </html>

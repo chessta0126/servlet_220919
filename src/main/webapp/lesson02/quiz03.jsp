@@ -20,7 +20,7 @@
 				<div class="d-flex align-items-end">
 					<input type="text" id="height" class="form-control col-3 mr-2" name="height" placeholder="키를 입력하세요.">cm
 					<input type="text" id="weight" class="form-control col-3 ml-2 mr-2" name="weight" placeholder="몸무게를 입력하세요">kg
-					<button type="submit" class="btn btn-info col-1 ml-2"><a href="/Web/lesson02/quiz03_1.jsp?name=height&name=weight" class="text-white">계산</a></button>
+					<button type="submit" class="btn btn-info col-1 ml-2">계산</button>
 				</div>
 			</div>
 		</form>	
