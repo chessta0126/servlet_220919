@@ -15,6 +15,77 @@
 	
 </head>
 <body>
+<%
+List<Map<String, Object>> list = new ArrayList<>();
+Map<String, Object> map = new HashMap<String, Object>() {
+    { 
+        put("id", 1000);
+        put("title", "아몬드"); 
+        put("author", "손원평"); 
+        put("publisher", "창비");
+        put("image", "http://image.kyobobook.co.kr/images/book/xlarge/267/x9788936434267.jpg");
+    } 
+};
+list.add(map);
 
+map = new HashMap<String, Object>() {
+    { 
+        put("id", 1001);
+        put("title", "사피엔스"); 
+        put("author", "유발 하라리"); 
+        put("publisher", "김영사");
+        put("image", "http://image.kyobobook.co.kr/images/book/xlarge/464/x9788934972464.jpg");
+    } 
+};
+list.add(map);
+
+map = new HashMap<String, Object>() {
+    { 
+        put("id", 1002);
+        put("title", "코스모스"); 
+        put("author", "칼 세이건"); 
+        put("publisher", "사이언스북");
+        put("image", "http://image.kyobobook.co.kr/images/book/xlarge/892/x9788983711892.jpg");
+    } 
+};
+list.add(map);
+
+map = new HashMap<String, Object>() {
+    { 
+        put("id", 1003);
+        put("title", "나미야 잡화점의 기적"); 
+        put("author", "히가시노 게이고"); 
+        put("publisher", "현대문학");
+        put("image", "http://image.kyobobook.co.kr/images/book/xlarge/194/x9788972756194.jpg");
+    } 
+};
+list.add(map);
+%>
+	<div class="container">
+	<%		
+		for(Map<String, Object> book : list){
+			/* if(request.getParameter("1000") != null && book.get("id").toString().equals("1000")
+	  		   || request.getParameter("1001") != null && book.get("id").toString().equals("1001")	
+	  		   || request.getParameter("1002") != null && book.get("id").toString().equals("1002")	
+	  		   || request.getParameter("1003") != null && book.get("id").toString().equals("1003")	
+					){ */
+
+	%>
+			<table>
+				<tr>
+					<td><image src="<%= book.get("image") %>" width="200px"></td>
+					<td class="d-flex align-items-top"><div>
+						<span class="display-4 font-weight-bold"><%= book.get("title") %></span>
+						<h1 class="text-info"><%= book.get("author") %></h1>
+						<h2 class="text-secondary"><%= book.get("publisher") %></h2>
+					</div></td>
+				</tr>
+					
+			</table>
+	<%
+			//}
+		}
+	%>
+	</div>
 </body>
 </html>
