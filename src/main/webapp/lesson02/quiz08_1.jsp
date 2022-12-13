@@ -61,31 +61,27 @@ map = new HashMap<String, Object>() {
 };
 list.add(map);
 %>
-	<div class="container">
-	<%		
-		for(Map<String, Object> book : list){
-			/* if(request.getParameter("1000") != null && book.get("id").toString().equals("1000")
-	  		   || request.getParameter("1001") != null && book.get("id").toString().equals("1001")	
-	  		   || request.getParameter("1002") != null && book.get("id").toString().equals("1002")	
-	  		   || request.getParameter("1003") != null && book.get("id").toString().equals("1003")	
-					){ */
-
-	%>
-			<table>
-				<tr>
-					<td><image src="<%= book.get("image") %>" width="200px"></td>
-					<td class="d-flex align-items-top"><div>
-						<span class="display-4 font-weight-bold"><%= book.get("title") %></span>
-						<h1 class="text-info"><%= book.get("author") %></h1>
-						<h2 class="text-secondary"><%= book.get("publisher") %></h2>
-					</div></td>
-				</tr>
-					
-			</table>
-	<%
-			//}
+<%	
+	int id = Integer.parseInt(request.getParameter("id"));
+	Map<String, Object> target = new HashMap<>();
+		
+	for(Map<String, Object> book : list){
+		if((int)book.get("id") == id){
+			target = book;
+			break;
 		}
-	%>
+	}
+%>
+
+<div class="container d-flex">
+	<div>
+		<image src="<%= target.get("image") %>" alt="표지" width="300px">
 	</div>
+	<div>
+		<div class="display-1 font-weight-bold"><%= target.get("title") %></span>
+		<div class="display-2 text-info"><%= target.get("author") %></h1>
+		<div class="display-4 text-secondary"><%= target.get("publisher") %></h2>
+	</div>
+</div>
 </body>
 </html>
