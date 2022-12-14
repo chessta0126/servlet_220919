@@ -14,13 +14,13 @@
 <div class="border border-success m-3">
 	<div class="p-3 d-flex">
 		<div class="mr-3">
-			<img src="<%=artistInfo.get("photo")%>" width="150px"
+			<img src="<%=artistInfo.get("photo")%>" width="200px"
 				alt="artwork">
 		</div>
 		<div class="font-weight-bold">
-			<h3><%=artistInfo.get("name")%></h3>
-			<span class="d-block"><%=artistInfo.get("agency")%></span>
-			<span><%=artistInfo.get("debute")%> 데뷔</span>
+			<h1><%=artistInfo.get("name")%></h1>
+			<h5><%=artistInfo.get("agency")%></h5>
+			<h5><%=artistInfo.get("debute")%> 데뷔</h5>
 		</div>
 	</div>
 </div>

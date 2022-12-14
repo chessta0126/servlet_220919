@@ -82,15 +82,58 @@
     musicList.add(musicInfo);
 %>
 
-<div class="border border-success m-3">
-	<div class="p-3 d-flex">
-		<div class="mr-3">
-			<img src="<%=artistInfo.get("photo")%>" width="150px" alt="artwork">
-		</div>
-		<div class="font-weight-bold">
-			<h3><%=artistInfo.get("name")%></h3>
-			<span class="d-block"><%=artistInfo.get("agency")%></span> <span><%=artistInfo.get("debute")%>
-				데뷔</span>
+<%-- 곡 정보 --%>
+<%
+String title = request.getParameter("title");
+
+for (Map<String, Object> target : musicList) {
+	if (title.equals(target.get("title"))) {
+%>
+<div>
+	<h3 class="font-weight-bold pl-3">곡 정보</h3>
+	<div class="border border-success m-3">
+		<div class="p-3 d-flex">
+			<div class="mr-3">
+				<img src="<%=target.get("thumbnail")%>" width="200px" alt="artwork">
+			</div>
+			<div>
+				<h1><%=target.get("title")%></h1>
+				<h5 class="text-success font-weight-bold pt-2 pb-2"><%=target.get("singer")%></h3>
+
+					<table class="text-secondary">
+						<tr>
+							<td>앨범</td>
+							<td><%=target.get("album")%></td>
+						</tr>
+						<%
+						int minutes = Integer.parseInt(target.get("time").toString()) / 60;
+						int seconds = Integer.parseInt(target.get("time").toString()) % 60;
+						%>
+						<tr>
+							<td>재생시간</td>
+							<td><%=minutes%> : <%=seconds%></td>
+						</tr>
+						<tr>
+							<td>작곡가</td>
+							<td><%=target.get("composer")%></td>
+						</tr>
+						<tr>
+							<td>작사가</td>
+							<td><%=target.get("lyricist")%></td>
+						</tr>
+					</table>
+			</div>
 		</div>
 	</div>
+</div>
+<%
+	}
+}
+%>
+
+<%-- 가사 --%>
+<div class="p-3">
+	<h3 class="font-weight-bold">가사</h3>
+	<hr>
+	<div class="font-weight-bold">가사 정보 없음</div>
 </div>
