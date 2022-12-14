@@ -2,6 +2,5 @@
 	pageEncoding="UTF-8"%>
 
 <footer class="d-flex justify-content-center align-items-center">
-	<div class="text-secondary">Copyright 2021. marondal All Rights
-		Reserved.</div>
+	<div class="text-secondary">Copyright 2021. marondal All Rights	Reserved.</div>
 </footer>
