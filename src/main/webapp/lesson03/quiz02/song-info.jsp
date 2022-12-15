@@ -127,6 +127,15 @@ for (Map<String, Object> target : musicList) {
 	</div>
 </div>
 <%
+//	} else{
+%>
+<!-- <div class="p-3">
+	<h3 class="font-weight-bold">!</h3>
+	<hr>
+	<div class="font-weight-bold">검색하신 곡이 없습니다.</div>
+</div> -->
+<%
+// return;
 	}
 }
 %>
