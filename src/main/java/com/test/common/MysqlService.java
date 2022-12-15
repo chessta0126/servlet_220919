@@ -20,7 +20,7 @@ public class MysqlService {
 	
 	// 메서드
 	// Singleton pattern : MysqlService라는 객체가 단 하나만 생성될 수 있도록 하는 디자인 패턴
-	// DB 연결을 여러 객체에서 하지 않도록
+	// DB 연결을 여러 객체에서 하지 않도록(트래픽 쌓임)
 	
 	public static MysqlService getInstance() {
 		if(mysqlService == null) { // 가져올 객체가 없을 경우 생성
