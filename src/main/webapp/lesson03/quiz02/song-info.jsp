@@ -106,12 +106,12 @@ for (Map<String, Object> target : musicList) {
 							<td><%=target.get("album")%></td>
 						</tr>
 						<%
-						int minutes = Integer.parseInt(target.get("time").toString()) / 60;
-						int seconds = Integer.parseInt(target.get("time").toString()) % 60;
+						int minutes = (int)target.get("time") / 60;
+						int seconds = (int)target.get("time") % 60;
 						%>
 						<tr>
 							<td>재생시간</td>
-							<td><%=minutes%> : <%=seconds%></td>
+							<td><%=minutes%>> : <%=seconds%></td>
 						</tr>
 						<tr>
 							<td>작곡가</td>
