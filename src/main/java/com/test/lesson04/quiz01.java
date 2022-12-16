@@ -25,10 +25,10 @@ public class quiz01 extends HttpServlet {
 		ms.connect(); // ★ 실질적인 DB 연결(필수!!)
 
 		// DB insert 한 행
-		String insertQuery = "insert into `real_estate`\r\n"
-				+ "(`realtorId`,`address`,`area`,`type`,`price`)\r\n"
-				+ "values\r\n"
-				+ "(3, '헤라펠리스 101동 5305호',350,\"매매\", 1500000);";
+		String insertQuery = "insert into `real_estate`"
+				+ "(`realtorId`,`address`,`area`,`type`,`price`)"
+				+ "values"
+				+ "(3, '헤라펠리스 101동 5305호',350,'매매', 1500000);";
 				
 		try {
 			ms.update(insertQuery);
@@ -39,7 +39,7 @@ public class quiz01 extends HttpServlet {
 		// DB selet & 결과 출력
 		PrintWriter out = response.getWriter(); // error 입력자 잘못이므로 throws로 예외처리
 
-		String selectQuery = "select * from `real_estate` order by `id` desc limit 10";
+		String selectQuery = "select `address`, `area`, `type` from `real_estate` order by `id` desc limit 10";
 		try {
 			ResultSet resultSet = ms.select(selectQuery);
 			while(resultSet.next()) { // 결과 행이 있는 동안 수행(hasNext() 역할)
@@ -51,5 +51,8 @@ public class quiz01 extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace(); // 쿼리 선택 잘못된 건 서버 잘못 -> try-catch로 처리해주자
 		}
+		
+		// DB 연결 끊기
+		ms.disconnect();
 	}
 }
