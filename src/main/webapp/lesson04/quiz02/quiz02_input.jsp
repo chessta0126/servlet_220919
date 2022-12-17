@@ -26,7 +26,7 @@
 <body>
 	<div class="container">
 	<h3 class="font-weight-bold">즐겨찾기 추가</h3>
-	<form method="post" action="/lesson04/quiz02/quiz02">
+	<form method="post" action="/lesson04/quiz02_insert">
 		<div>
 			<b>사이트명:</b>
 			<input type="text" class="form-control col-4 mb-2" name="name">
