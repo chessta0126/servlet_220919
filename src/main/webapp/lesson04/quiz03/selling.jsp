@@ -24,8 +24,8 @@ ResultSet rs = ms.select(selectQuery);
 				%>
 				<div class="d-flex justify-content-center align-item-center">
 					<div
-						class="emptybox d-flex justify-content-center align-item-center">
-						<div class="text-secondary">이미지 없음</div>
+						class="emptybox d-flex justify-content-center align-items-center">
+						<h3 class="text-secondary">이미지 없음</h3>
 					</div>
 				</div>
 				<%
@@ -35,7 +35,7 @@ ResultSet rs = ms.select(selectQuery);
 				<%
 				}
 				%>
-				<div class="font-weight-bold"><%=rs.getString("description")%></div>
+				<div class="font-weight-bold"><%=rs.getString("title")%></div>
 				<div class="font-weight-bold text-secondary"><%=rs.getInt("price")%>원</div>
 				<div class="font-weight-bold text-danger"><%=rs.getString("nickname")%></div>
 			</div>

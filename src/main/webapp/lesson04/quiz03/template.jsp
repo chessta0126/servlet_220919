@@ -37,6 +37,7 @@ nav {height: 50px;  background-color: orange;}
 
 .selling{height: 800px;}
 .emptybox{width:280px; height: 280px;}
+.border:hover{background-color: orange;}
 
 footer {height: 50px;}
 </style>
