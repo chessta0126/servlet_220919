@@ -111,7 +111,7 @@ for (Map<String, Object> target : musicList) {
 						%>
 						<tr>
 							<td>재생시간</td>
-							<td><%=minutes%>> : <%=seconds%></td>
+							<td><%=minutes%> : <%=seconds%></td>
 						</tr>
 						<tr>
 							<td>작곡가</td>
